@@ -57,6 +57,7 @@ gulp.task('js', function() {
 //jsの圧縮
 gulp.task('jsmin', function() {
   return gulp.src('./src/js/**/*.js')
+    .pipe(plumber())
     .pipe(uglify())
     .pipe(gulp.dest('./dest/js/'))
     .pipe(browserSync.reload({
