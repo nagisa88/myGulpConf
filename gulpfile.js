@@ -1,7 +1,7 @@
 var gulp        = require('gulp');
 var sass        = require('gulp-sass'); //sassのコンパイル
 var plumber     = require('gulp-plumber');　//エラーが出たときでも、タスクを止めずに動かす（ファイル監視）
-var sourcemaps  = require('gulp-sourcemaps'); //ソースマップを作成
+// var sourcemaps  = require('gulp-sourcemaps'); ソースマップを作成
 var notify      = require('gulp-notify'); //デスクトップにエラー通知をおこなう
 var browserSync = require('browser-sync'); //ローカルサーバを起動
 
@@ -39,7 +39,7 @@ gulp.task('sass', function() {
   return gulp.src(sassDir.src)
     .pipe(plumber())
     .pipe(sass())
-    .pipe(sourcemaps.write())
+    // .pipe(sourcemaps.write())
     .pipe(gulp.dest(sassDir.dest))
     .pipe(browserSync.reload({
       stream: true
